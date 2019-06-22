@@ -1,11 +1,17 @@
+import Interactor from './interactor';
 import bathsRep from '../repositories/baths.rep';
 
-class bathsBs {
-  constructor(){}
+class BathsBs extends Interactor {
+  constructor(){
+    super();
+  }
 
-  async createBath ({ user_id, bath_time }) {
+  async execute({ user_id, bath_time }) {
 
-    const bath = await bathsRep.createBath({ user_id, bath_time });
+    const bath = await bathsRep.createBath({
+      user_id,
+      bath_time
+    });
 
     if(!bath) {
       throw 'Não foi possível cadastrar o banho';
@@ -16,10 +22,12 @@ class bathsBs {
 
   async getBaths ({ user_id }) {
 
-    const baths = await bathsRep.getBaths({ user_id });
+    const baths = await bathsRep.getBaths({
+      user_id,
+    });
     
     return baths;
   }
 }
 
-module.exports = bathsBs;
+export default BathsBs;

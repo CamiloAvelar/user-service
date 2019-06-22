@@ -1,6 +1,6 @@
 import BathsBs from '../interactors/baths.bs';
 
-exports.createBath = async (req, res) => {
+const createBath = async (req, res) => {
   const bathsBs = new BathsBs();
 
   const bath = {
@@ -10,19 +10,34 @@ exports.createBath = async (req, res) => {
 
   try {
     const response = await bathsBs.createBath(bath);
-    res.status(200).send(response);
+
+    res
+      .status(200)
+      .send(response);
   } catch (err) {
-    res.status(500).send(err);
+    res
+      .status(500)
+      .send(err);
   }
 };
 
-exports.getBaths = async (req, res) => {
+const getBaths = async (req, res) => {
   const bathsBs = new BathsBs();
 
   try {
     const response = await bathsBs.getBaths({ user_id: req.params.id });
-    res.status(200).send(response);
+
+    res
+      .status(200)
+      .send(response);
   } catch (err) {
-    res.status(500).send(err);
+    res
+      .status(500)
+      .send(err);
   }
+};
+
+export default {
+  createBath,
+  getBaths
 };

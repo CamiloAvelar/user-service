@@ -1,6 +1,6 @@
 import models from './../config/models/index';
 
-exports.createUser = async ({ name, password, allowedBathTime }) => {
+const createUser = async ({ name, password, allowedBathTime }) => {
   return await models.UserSettings.create({
     allowed_bath_time: allowedBathTime,
     user: {
@@ -17,11 +17,27 @@ exports.createUser = async ({ name, password, allowedBathTime }) => {
   });
 };
 
-exports.getUser = async ({ id }) => {
+const getUser = async ({ id }) => {
   return await models.User.findOne({
     where: {
       id
     },
     include: [ models.UserSettings ]
   });
+};
+
+const editUserTime = async ({ id, new_time }) => {
+  return await models.UserSettings.update({
+    allowed_bath_time: new_time
+  },{
+    where: {
+      user_id: id
+    }
+  });
+};
+
+export default {
+  createUser,
+  getUser,
+  editUserTime
 };

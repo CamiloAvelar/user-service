@@ -13,10 +13,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('combined'));
 
-app.use('/cadastra-usuario', routes.cadastro);
-app.use('/retorna-usuario', routes.retornaUser);
+app.use('/usuario', routes.usuario);
 app.use('/banho', routes.baths);
-app.use('/autoriza-usuario', routes.autorizaUser);
 
 app.listen(port, () => {
   console.log(`User server listening on port ${port}`);

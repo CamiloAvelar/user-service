@@ -1,9 +1,12 @@
+import Interactor from './interactor';
 import usersRep from '../repositories/users.rep';
 
-class retornaUserBs {
-  constructor(){}
+class GetUserBs extends Interactor{
+  constructor(){
+    super();
+  }
 
-  async getUser({ id }) {
+  async execute({ id }) {
     const user = await usersRep.getUser({ id });
 
     if(!user) {
@@ -20,4 +23,4 @@ class retornaUserBs {
   }
 }
 
-module.exports = retornaUserBs;
+export default GetUserBs;

@@ -1,10 +1,13 @@
+import Interactor from './interactor';
 import usersRep from '../repositories/users.rep';
 import bcrypt from 'bcrypt';
 
-class cadastroBs {
-  constructor(){}
+class CreateUserBs extends Interactor {
+  constructor(){
+    super();
+  }
 
-  async createUser({ name, password, allowedBathTime }) {
+  async execute({ name, password, allowedBathTime }) {
 
     if (!allowedBathTime) {
       allowedBathTime = 10;
@@ -30,4 +33,4 @@ class cadastroBs {
   }
 }
 
-module.exports = cadastroBs;
+export default CreateUserBs;

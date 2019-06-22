@@ -1,10 +1,13 @@
+import Interactor from './interactor';
 import usersRep from '../repositories/users.rep';
 import bcrypt from 'bcrypt';
 
-class autorizaUserBs {
-  constructor(){}
+class AuthorizeUserBs extends Interactor {
+  constructor(){
+    super();
+  }
 
-  async autoriza({ id, pass }) {
+  async execute({ id, pass }) {
     const user = await usersRep.getUser({ id });
 
     if(!user) {
@@ -19,4 +22,4 @@ class autorizaUserBs {
   }
 }
 
-export default autorizaUserBs;
+export default AuthorizeUserBs;

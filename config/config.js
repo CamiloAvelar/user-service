@@ -1,6 +1,6 @@
-module.exports = {
+export default {
   server: {
-    logging: false,
+    logging: true,
     port: 3001
   },
   sequelize: {

@@ -1,11 +1,7 @@
-import cadastro from './cadastro';
-import retornaUser from './retornaUser';
+import usuario from './usuario';
 import baths from './baths';
-import autorizaUser from './autorizaUser';
 
 export default {
-  cadastro,
-  retornaUser,
+  usuario,
   baths,
-  autorizaUser
 };
