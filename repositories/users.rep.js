@@ -29,9 +29,19 @@ const getUser = async ({ id }) => {
 const editUserTime = async ({ id, new_time }) => {
   return await models.UserSettings.update({
     allowed_bath_time: new_time
-  },{
+  }, {
     where: {
       user_id: id
+    }
+  });
+};
+
+const editPassword = async ({ id, password }) => {
+  return await models.User.update({
+    password
+  }, {
+    where: {
+      id
     }
   });
 };
@@ -39,5 +49,6 @@ const editUserTime = async ({ id, new_time }) => {
 export default {
   createUser,
   getUser,
-  editUserTime
+  editUserTime,
+  editPassword
 };

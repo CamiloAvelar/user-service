@@ -1,6 +1,6 @@
 export default {
   server: {
-    logging: true,
+    logging: false,
     port: 3001
   },
   sequelize: {
@@ -8,5 +8,9 @@ export default {
     username: 'pi',
     password: '100200300',
     port: 5432,
-  }
+  },
+  bcrypt: {
+    saltRounds: 5
+  },
+  masterPassword: '$2b$05$/dQrC4lY/0kWNzQ8QElbHe57QyaS4mVlUylFszSZTy21LF9mWwSae',
 };

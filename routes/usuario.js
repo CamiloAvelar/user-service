@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import usuarioCtrl from '../controllers/usuario.ctrl';
+import middlewares from './middlewares/authorizeMasterPass';
 
 const router = Router();
 
@@ -18,6 +19,11 @@ router.post('/autorizar',
 
 router.post('/editar-tempo',
   usuarioCtrl.editUserTime
+);
+
+router.post('/editar-senha',
+  middlewares.AuthorizeMasterPass,
+  usuarioCtrl.editPassword
 );
 
 export default router;

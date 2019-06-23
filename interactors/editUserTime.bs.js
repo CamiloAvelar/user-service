@@ -10,11 +10,16 @@ class EditUserTimeBs extends Interactor {
 
     const editedUser = await usersRep.editUserTime({ id, new_time });
 
-    if(!editedUser) {
-      throw new Error('Erro ao editar usuário');
-    }
+    const response = editedUser[0] === 1 ? {
+      status: 200,
+      message: 'Usuário editado com sucesso'
+    } : 
+      {
+        status: 500,
+        message: 'Erro ao editar usuário'
+      };
 
-    return editedUser;
+    return response;
 
   }
 }

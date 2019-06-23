@@ -1,6 +1,7 @@
 import Interactor from './interactor';
 import usersRep from '../repositories/users.rep';
 import bcrypt from 'bcrypt';
+import config from './../config/config';
 
 class CreateUserBs extends Interactor {
   constructor(){
@@ -13,9 +14,7 @@ class CreateUserBs extends Interactor {
       allowedBathTime = 10;
     }
 
-    const saltRounds = 5;
-
-    const hash = await bcrypt.hash(password.toString(), saltRounds);
+    const hash = await bcrypt.hash(password.toString(), config.bcrypt.saltRounds);
 
     const user = await usersRep.createUser({ name, password: hash, allowedBathTime });
 

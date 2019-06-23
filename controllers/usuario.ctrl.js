@@ -2,6 +2,7 @@ import CreateUserBs from '../interactors/createUser.bs';
 import GetUserBs from '../interactors/getUser.bs';
 import AuthorizeUserBs from '../interactors/authorizeUser.bs';
 import EditUserTimeBs from '../interactors/editUserTime.bs';
+import EditPasswordBs from '../interactors/editPassword.bs';
 
 const createUser = async (req, res) => {
   const createUserBs = new CreateUserBs();
@@ -79,9 +80,29 @@ const editUserTime = async (req, res) => {
   }
 };
 
+const editPassword = async (req, res) => {
+  const editPasswordBs = new EditPasswordBs();
+
+  try {
+    const response = await editPasswordBs.execute({
+      id: req.body.id,
+      new_password: +req.body.new_password,
+    });
+
+    res
+      .status(200)
+      .send(response);
+  } catch (err) {
+    res
+      .status(500)
+      .send(err);
+  }
+};
+
 export default {
   createUser,
   getUser,
   authorizeUser,
-  editUserTime
+  editUserTime,
+  editPassword
 };
