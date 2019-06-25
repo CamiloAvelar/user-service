@@ -9,7 +9,7 @@ const createBath = async (req, res) => {
   };
 
   try {
-    const response = await bathsBs.createBath(bath);
+    const response = await bathsBs.execute(bath);
 
     res
       .status(200)
