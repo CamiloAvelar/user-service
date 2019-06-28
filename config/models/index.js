@@ -13,6 +13,7 @@ const sequelize = new Sequelize(
       freezeTableName: true,
       underscored: true,
     },
+    timezone: config.sequelize.timezone,
   },
 );
 

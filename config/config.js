@@ -8,6 +8,7 @@ export default {
     username: 'pi',
     password: '100200300',
     port: 5432,
+    timezone: 'America/Sao_Paulo',
   },
   bcrypt: {
     saltRounds: 5
