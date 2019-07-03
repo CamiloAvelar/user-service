@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "pi",
+    "password": "100200300",
+    "database": "users",
+    "host": "postgres",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "pi",
+    "password": "100200300",
+    "database": "users",
+    "host": "postgres",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "pi",
+    "password": "100200300",
+    "database": "users",
+    "host": "postgres",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}
