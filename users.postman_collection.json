@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "e452d973-da82-4bd2-9d91-3135061a4c7a",
+		"name": "users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get/banhos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{users-service-url}}/banho/3",
+					"host": [
+						"{{users-service-url}}"
+					],
+					"path": [
+						"banho",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/usuario/editar-senha",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Master-Password",
+						"value": "100200300",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 3,\n\t\"new_password\": 123\n}"
+				},
+				"url": {
+					"raw": "{{users-service-url}}/usuario/editar-senha",
+					"host": [
+						"{{users-service-url}}"
+					],
+					"path": [
+						"usuario",
+						"editar-senha"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/usuario/editar-tempo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 2,\n\t\"new_time\": 2\n}"
+				},
+				"url": {
+					"raw": "{{users-service-url}}/usuario/editar-tempo",
+					"host": [
+						"{{users-service-url}}"
+					],
+					"path": [
+						"usuario",
+						"editar-tempo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/usuario/autorizar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 2,\n\t\"password\": 100200300\n}"
+				},
+				"url": {
+					"raw": "{{users-service-url}}/usuario/autorizar",
+					"host": [
+						"{{users-service-url}}"
+					],
+					"path": [
+						"usuario",
+						"autorizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/banho",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_id\": 3,\n\t\"bath_time\": 10\n}"
+				},
+				"url": {
+					"raw": "{{users-service-url}}/banho",
+					"host": [
+						"{{users-service-url}}"
+					],
+					"path": [
+						"banho"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/usuario/3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{users-service-url}}/usuario/3",
+					"host": [
+						"{{users-service-url}}"
+					],
+					"path": [
+						"usuario",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/usuario/cadastrar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Karranca\",\n\t\"password\": 1234,\n\t\"allowed_bath_time\": 6\n}"
+				},
+				"url": {
+					"raw": "{{users-service-url}}/usuario/cadastrar",
+					"host": [
+						"{{users-service-url}}"
+					],
+					"path": [
+						"usuario",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
